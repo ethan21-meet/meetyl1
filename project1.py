@@ -28,7 +28,7 @@ class User(object):
 		print(self.name + " has posted " + text)
 
 	def get_userInfo(self):
-		print("Name: ["+self.name+"] "+ "Email:["+self.email+"] "+ "Password:["+self.password+"] "+ "Friends:["+str(self.friends_list))
+		print("Name:" + self.name + "Email:" + self.email + "Password:" + self.password + "Friends:" + str(self.friends_list))
 
 
 user1= User("josh" , "joshi8@meet.mit.edu" ,"helloooo"  )
@@ -51,8 +51,42 @@ class post(object):
 
 	def add_comments(self):
 		self.num_comments = self.num_comments + 1
+
 user1.post("hi hello")
 user1.get_userInfo()
+
+
+class Comment(post):
+	def __init__(self,like,text,emoji,num_comments):
+		self.like = 0
+		self.emoji = emoji
+		self.text = text
+		self.num_comments = 0
+
+	def like(self,text):
+		self.like = self.like + 1
+		print ("someone liked your comment!")
+
+	def num_comments(self,text):
+		self.num_comments = self.num_comments + 1
+		print("someone commented on your comment")
+
+
+
+print("log in mate")
+email = input("what is your email?")
+password = input("what is your password")
+for user in users():
+	if email== user.email:
+		if password == user.password:
+			loggedin = user
+
+
+
+
+
+
+
 
 
 
