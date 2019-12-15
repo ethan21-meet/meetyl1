@@ -9,6 +9,7 @@ class User(object):
 		self.email = email
 		self.password = password
 		self.friends_list =[]
+		self.posts = []
 		
 
 
@@ -24,7 +25,7 @@ class User(object):
 
 	def post(self,text):
 		posst = Post(text, 0, 0, self.email)
-		posts.append(posst)
+		self.posts.append(posst)
 		print(self.name + " has posted " + text)
 
 	def get_userInfo(self):
@@ -37,7 +38,7 @@ user2 = User("andres" ,"andresini@meet.mit.edu" ,"liverpool" )
 
 user1.get_userInfo()
 
-class post(object):
+class Post(object):
 	def __init__(self,text,num_likes,num_comments,author):
 		self.num_likes = 0
 		self.num_comments = 0
@@ -56,7 +57,7 @@ user1.post("hi hello")
 user1.get_userInfo()
 
 
-class Comment(post):
+class Comment(Post):
 	def __init__(self,like,text,emoji,num_comments):
 		self.like = 0
 		self.emoji = emoji
@@ -72,14 +73,50 @@ class Comment(post):
 		print("someone commented on your comment")
 
 
+while True:
+	x=input("log in - 1 sign up - 2")
+	if x==1:
+		print("log in mate")
+		email = input("what is your email?")
+		password = input("what is your password")
+		print("you logged in")
+		for user in users:
+			if email== loggedin.email and password == loggedin.password:
 
-print("log in mate")
-email = input("what is your email?")
-password = input("what is your password")
-for user in users():
-	if email== user.email:
-		if password == user.password:
-			loggedin = user
+				
+				print("you logged in")
+			if email != loggedin.email and password == loggedin.password:
+				print("youre wrong!")
+
+				while 0==0:
+					q = input("what do you want to do?")
+					if q == "comment":
+						Posts[0].add_comments
+						print("you added a comment!")
+						if q == "like":
+							Posts[0].add_likes
+							print("you added a like!")
+						if q == "add_friends":
+							k=input('freinds name')
+
+							loggedin.add_friends(k)
+
+
+
+
+
+
+				
+						
+	
+	if x==2:
+		 y= input("whats your name?")
+		 z= input("whats your email")
+		 a= input("whats your password?")
+		 print("you signd up!")
+		 loggedin = User(y,z,a)
+
+
 
 
 
